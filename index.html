@@ -1,193 +1,12 @@
-<script src="/Asset_Archive/BRWeb/content/0015/300/465/assets/vimeoplayer.js"></script>
-<script src="/Asset_Archive/BRWeb/content/0015/300/465/assets/rellax.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="./assets/vimeoplayer.js"></script>
+<script src="./assets/rellax.min.js"></script>
+<script src="./assets/js/summer-primary.js"></script>
+<link rel="stylesheet" type="text/css" href="./assets/css/brfs-e4242cd4ec.css">
+<link rel="stylesheet" type="text/css" href="./assets/css/brsitewide.css">
+<link rel="stylesheet" type="text/css" href="./assets/css/summer-primary.css">
 
-<style type="text/css">
-    .sticky-navmenu{
-        position: absolute;
-        width:25%;
-        right: 0;
-        z-index: 4;
 
-    }
-    .sticky-navmenu ul{
-    }
-    .sticky-navmenu ul li {
-      text-transform: uppercase;
-        letter-spacing: .1em;
-        font-family: futura-pt,Futura,"Hiragino Kaku Gothic Pro",sans-serif;
-        color: #000;
-        font-weight: 700;
-        letter-spacing: 4px;
-        font-size: .85rem;
-        margin-bottom: 1.3em;
-    }
-    .sticky-navmenu ul li a:hover, .sticky-navmenu ul li.active-section{
-      color: #b95540;
-    }
-    .navScrolled {
-      position: fixed;
-      top: 100px;
-    }
-
-</style>
-
-<style type="text/css">
-/*override top nav*/
-#topNav, #footer, #zoomLayer, #dragLayer, #previewBar, .brand-bar-with-contents .marketing-content{position: relative;}
-
-#topNav, #footer{
-  z-index:10;
-  background-color:#fff !important;
-}
-#topNavCommon_region1{
-    background-color: #fff;
-    padding-top: 5em;
-    margin-top: 0;
-}
-
-#previewBar, .brand-bar-with-contents .marketing-content{
-  z-index: 1;
-}
-</style>
-
-<style type="text/css">
-
-.summer--video-popup{display:none;position:fixed;width:100%;height:100%;top: 0;background-color: rgba(0,0,0,.5);z-index: 10;}
-.summer--video-popup .summer--video{width: 70%;max-width: 1200px;}
-.summer--video-popup .summer--video a.videoclosebutton{display:block;left:none;right:0;}
-
-.summer--video .sds_relative {
-    padding-bottom: 56.25%;
-    max-width: 100%;
-}
-.summer--video a.videoclosebutton {
-    display:none;
-    position: absolute;
-    left: 0;
-    top: -54px;
-    cursor: pointer;
-}
-.summer--video iframe.videoplayer,
-.summer--video .videoposter {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-}
-</style>
-<style type="text/css">
-/* z-index utilities */
-  .summerprimary .front{z-index:3;}
-  .summerprimary .above-2{z-index:2;}
-  .summerprimary .above-1{z-index:1;}
-  .summerprimary .mid{z-index:0;}
-  .summerprimary .behind{z-index:-1;}
-  .summerprimary .back{z-index:-2;}
-
-/* page-wide styles */
-  .summerprimary a[onclick],.summerprimary a[data-scroll]{cursor: pointer;}
-  .summerprimary {max-width:100%;}
-  .summerprimary .sds_btn.orange{background-color:#b13f26;}
-  .summerprimary .sds_btn.black{background-color:#000;}
-  .summerprimary a span.orange.sds_btn.sds_btn.sds_btn.sds_btn:hover{color:#b13f26;}
-  .summerprimary a span.black.sds_btn.sds_btn.sds_btn.sds_btn:hover{color:#000;}
-  .summerprimary .lp--top-content{max-width: 100%;position:relative; z-index:0;}
-  .summerprimary .lp--main-content{margin-left:auto;margin-right:auto; position:relative;background-color:#fff; overflow:hidden;}
-  .summerprimary .lp--main-content .mkt_content-wrapper{max-width:1440px;}
-  .summerprimary [id^="section"] {position:relative; margin-bottom:0;}
-  .summerprimary [id^="section"] .background{margin-top: 0%;}
-
-/* spotlight styles */
-  .summerprimary .lp--top-content .cta1{top:-10px;left:41.67%;max-width:264px;width:20.83%;margin-top:52%;}
-  .summerprimary .lp--top-content .spotlight-text{top:-10px;}
-
-  .scroll-to-down{position: relative;background-color: #fff;}
-
-/* section 1 styles */
-  .summerprimary #section1 .sds_absolute{top:0%;}
-  .summerprimary #section1 .img1{margin-top:30%;}
-  .summerprimary #section1 .img2{margin-top:-5%;}
-  .summerprimary #section1 .text1{width:37.5%; left:41.67%; margin-top:2%; z-index: 3;}
-  .summerprimary #section1 .text2{margin-top: 75%;margin-left: -10%;margin-right: 10%;}
-  .summerprimary #section1 .text3{margin-top:50%;}
-  .summerprimary #section1 .cta2{width:45%;margin-top:25%;}
-
-/* section 2 styles */
-  .summerprimary #section2 .sds_absolute{top:0%;}
-  .summerprimary #section2 .img4{margin-top:26%;}
-  .summerprimary #section2 .img5{margin-top:33%;}
-  .summerprimary #section2 .img6{margin-top:0;}
-  .summerprimary #section2 .img7{margin-top:17%;}
-  .summerprimary #section2 .text4{width:45.83%;margin-top:5%; left:25%; z-index: 3;}
-  .summerprimary #section2 .text5{margin-top: 200%;margin-right: -20%;margin-left: 20%; z-index: 0;}
-  .summerprimary #section2 .text6{margin-top:80%; z-index: 0;}
-  .summerprimary #section2 .cta3{width:40%;margin-top:25%;margin-left:32%;}
-  
-
-/* section 3 styles */
-  .summerprimary #section3 .sds_absolute{top:0%;}
-  .summerprimary #section3 .img8{position:relative; margin-top:16%;}
-  .summerprimary #section3 .img9{position:relative; margin-top:43%;}
-  .summerprimary #section3 .img10{position:relative; margin-top:-15%;}
-  .summerprimary #section3 .text7{position:relative; margin-top:220%; margin-left:-25%; z-index: 0;}
-  .summerprimary #section3 .text8{position:absolute;top:0;width:33.33%;margin-top:6%;left:29.17%;}
-  .summerprimary #section3 .text9{position:relative; margin-top:30%;}
-  .summerprimary #section3 .cta4{margin-top: 89%;left:45%;}
-
-/* section 4 styles */
-  .summerprimary #section4 .sds_absolute{top:0%;}
-  .summerprimary #section4 .img11{position:relative;}
-  .summerprimary #section4 .img12{position:relative; margin-top:-12%;}
-  .summerprimary #section4 .img13{position:relative; margin-top:0%;}
-  .summerprimary #section4 .text10{margin-top:18%; z-index: 0;}
-  .summerprimary #section4 .text11{margin-top:15%; z-index: 1;}
-  .summerprimary #section4 .text12{margin-top:50%; z-index: 0;}
-  .summerprimary #section4 .cta5{margin-top: 102%;left:16.67%;}
-
-/* section 5 styles */
-  .summerprimary #section5 .sds_absolute{top:0%;}
-  .summerprimary #section5 .img14{position:relative; margin-top:30%;}
-  .summerprimary #section5 .img15{position:relative; margin-top:19%;}
-  .summerprimary #section5 .img16{margin-top:0%;}
-  .summerprimary #section5 .text13{position:absolute;top:0;left:0;width:37.5%;margin-top:8%;left:29.16%; z-index: 3;}
-  .summerprimary #section5 .text14{margin-top:140%; z-index: 1;}
-  .summerprimary #section5 .text15{margin-top:45%; z-index: 0;}
-  .summerprimary #section5 .cta6{width:65%;margin-top:10%;}
-/* bttom nav styles */
-  #bottom-nav-section{position: relative;}
-  #bottom-nav-section .sds_btn{font-size:.9rem; white-space: normal;}
-
-/* image mapping */
-a[class*="linkmap"]{position:absolute;top:0;left:0;}
-a[class*="linkmap--sm"]{width:50%;height:100%;}
-a[class*="linkmap--sm-bottom"]{width: 57%;height: 30%;top: 4%;left: 21%;}
-a.linkmap--sm-bottom-msummer{top:35%;}
-a.linkmap--sm-bottom-blog{top:66%;}
-
-@media screen and (min-width:1024px){
-  .summerprimary .lp--top-content{height:550px;height:39vw;}
-  .summerprimary .lp--top-content .spotlight-text, .summerprimary .lp--top-content .spotlight-img{width:110%;}
-
-  .summerprimary [id^="section"] {margin-bottom:8%;}
-  .summerprimary #section5{ padding-bottom:35%; }
-  a[class*="linkmap--lg"]{width:33%;height:39%;}
-  a[class*="linkmap--sm"]{display:none;}
-
-  a.linkmap--lg-section1{top:66%;}
-  a.linkmap--lg-section2-1{width:38%;height:43%;top:71%;}
-  a.linkmap--lg-section2-2{width:36%;height:47%;top:53%;left:55%;}
-  a.linkmap--lg-section4{width: 46%;height: 51%;top: 77%;left: 29%;}
-}
-
-@media screen and (min-width:1280px){
-  .summerprimary .lp--top-content .spotlight-text, .summerprimary .lp--top-content .spotlight-img{width:100%;}
-  .summerprimary .lp--top-content .cta1{margin-top:47%;}
-}
-</style>
 <div class="summerprimary">
 
   <!-- 00 : Spotlight -->
@@ -195,11 +14,11 @@ a.linkmap--sm-bottom-blog{top:66%;}
     <div class="sds_hide-at-xl">
       <div class="sds_relative">
         <picture>
-            <source srcset="/Asset_Archive/BRWeb/content/0015/300/465/assets/Mobile/00_TOP/180501_M_SummerPrimary_Mobile_TOP_img.jpg" media="(max-width: 1023px)">
+            <source srcset="./assets/Mobile/00_TOP/180501_M_SummerPrimary_Mobile_TOP_img.jpg" media="(max-width: 1023px)">
             <img alt src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==">
           </picture>
           <picture class="mkt_layer sds_full">
-            <source srcset="/Asset_Archive/BRWeb/content/0015/300/465/assets/Mobile/00_TOP/180501_M_SummerPrimary_Mobile_TOP_copy.svg" media="(max-width: 1023px)">
+            <source srcset="./assets/Mobile/00_TOP/180501_M_SummerPrimary_Mobile_TOP_copy.svg" media="(max-width: 1023px)">
             <img alt="the packing list" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==">
           </picture>
       </div>
@@ -208,13 +27,13 @@ a.linkmap--sm-bottom-blog{top:66%;}
       <div class="spotlight-img mkt_fixed sds_full mkt_top--0 sds_absolute-centered--horizontal">
         <picture>
           <source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)">
-          <img alt src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/00_TOP/180501_M_SummerPrimary_TOP_img.jpg">
+          <img alt src="./assets/Desktop/00_TOP/180501_M_SummerPrimary_TOP_img.jpg">
         </picture>
       </div>
       <div class="spotlight-text mkt_fixed sds_full mkt_top--0 sds_absolute-centered--horizontal">
         <picture>
           <source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)">
-          <img alt="the packing list" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/00_TOP/180501_M_SummerPrimary_TOP_copy.svg">
+          <img alt="the packing list" src="./assets/Desktop/00_TOP/180501_M_SummerPrimary_TOP_copy.svg">
         </picture>
       </div>
       <div class="mkt_fixed cta1">
@@ -231,7 +50,7 @@ a.linkmap--sm-bottom-blog{top:66%;}
       <div class="sds_pd_vertical sds_tx_center">
         <a data-scroll="section1"><picture>
           <source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)">
-          <img alt src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Arrow_v2.svg">
+          <img alt src="./assets/Arrow_v2.svg">
         </picture></a>
       </div>
     </div>
@@ -257,11 +76,11 @@ a.linkmap--sm-bottom-blog{top:66%;}
         <!--  background layer -->
         <div class="background sds_relative">
           <a href="/browse/category.do?cid=1020051" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_shorts');"><picture>
-            <source srcset="/Asset_Archive/BRWeb/content/0015/300/465/assets/Mobile/01_SHORTS/180501_M_SummerPrimary_Mobile_SHORTS_img.jpg" media="(max-width: 1023px)">
-            <img alt src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/01_SHORTS/180501_M_SummerPrimary_SHORTS_L3img.jpg" >
+            <source srcset="./assets/Mobile/01_SHORTS/180501_M_SummerPrimary_Mobile_SHORTS_img.jpg" media="(max-width: 1023px)">
+            <img alt src="./assets/Desktop/01_SHORTS/180501_M_SummerPrimary_SHORTS_L3img.jpg" >
           </picture>
           <picture class="mkt_layer sds_full">
-            <source srcset="/Asset_Archive/BRWeb/content/0015/300/465/assets/Mobile/01_SHORTS/180501_M_SummerPrimary_Mobile_SHORTS_copy.svg" media="(max-width: 1023px)">
+            <source srcset="./assets/Mobile/01_SHORTS/180501_M_SummerPrimary_Mobile_SHORTS_copy.svg" media="(max-width: 1023px)">
             <img alt="smart shorts" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" >
           </picture></a>
 
@@ -271,7 +90,7 @@ a.linkmap--sm-bottom-blog{top:66%;}
         <div class="sds_show-at-xl">
           <!-- text -->
           <div class="sds_absolute text1 rellax" data-rellax-speed="1" data-rellax-percentage="0.5">
-            <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/01_SHORTS/180501_M_SummerPrimary_SHORTS_L1copy.svg" alt="smart shorts"></picture>
+            <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="./assets/Desktop/01_SHORTS/180501_M_SummerPrimary_SHORTS_L1copy.svg" alt="smart shorts"></picture>
           </div>
           <div class="sds_absolute sds_full above-1">
             <div class="sds_grid-root sds_relative">
@@ -279,7 +98,7 @@ a.linkmap--sm-bottom-blog{top:66%;}
               <div class="sds_g-11-24">
                 <div class="img1 rellax" data-rellax-speed="5" data-rellax-percentage="0.5">
                   <a href="/browse/outfit.do?cid=13846&oid=OUT-274198002" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_smartshortsoutfit');">
-                    <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/01_SHORTS/180501_M_SummerPrimary_SHORTS_L2img.jpg" alt="shorts image large"></picture>
+                    <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="./assets/Desktop/01_SHORTS/180501_M_SummerPrimary_SHORTS_L2img.jpg" alt="shorts image large"></picture>
                     <span class="sds_btn sds_letter-spacing--2-0 orange sds_btn--full-width">shop the look</span>
                   </a>
                 </div>
@@ -288,16 +107,16 @@ a.linkmap--sm-bottom-blog{top:66%;}
               <!-- video -->
               <div class="sds_g-5-12">
                 <div class="text2 rellax" data-rellax-speed="2" data-rellax-percentage="0.5">
-                  <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/01_SHORTS/180501_M_SummerPrimary_SHORTS_L2copy.svg" alt="tip: travel light. these are the only shorts you need to pack. lightweight, quick dry and wrinkle resistant"></picture>
+                  <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="./assets/Desktop/01_SHORTS/180501_M_SummerPrimary_SHORTS_L2copy.svg" alt="tip: travel light. these are the only shorts you need to pack. lightweight, quick dry and wrinkle resistant"></picture>
                 </div>
                 <div class="img2 rellax" data-rellax-speed="2" data-rellax-percentage="0.5">
                   <div class="sds_relative">
                     <div class="summer--video">
                           <div class="sds_relative">
                               <p class="sds_font--primary sds_font-size--42 sds_color--bk sds_tx_right"><a class="videoclosebutton">x</a></p>
-                              <iframe data-tid="m_thepackinglist_shorts_video" class="videoplayer"></iframe>
+                              <iframe allow="autoplay" data-tid="m_thepackinglist_shorts_video" class="videoplayer"></iframe>
                           </div>
-                          <div class="videoposter"><picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/01_SHORTS/180501_M_SummerPrimary_SHORTS_L2img2.jpg" alt="video poster"></picture><picture class="mkt_layer sds_full"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Video_Play.svg" alt="video play button"></picture></div>
+                          <div class="videoposter"><picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="./assets/Desktop/01_SHORTS/180501_M_SummerPrimary_SHORTS_L2img2.jpg" alt="video poster"></picture><picture class="mkt_layer sds_full"><img class="sds_full" src="./assets/Video_Play.svg" alt="video play button"></picture></div>
                       </div>
                     </div>
                 </div>
@@ -307,7 +126,7 @@ a.linkmap--sm-bottom-blog{top:66%;}
               <!-- text -->
               <div class="sds_g-3-8">
                 <div class="text3 rellax" data-rellax-speed="2" data-rellax-percentage="0.5">
-                  <a href="/browse/category.do?cid=1020051" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_shorts');"><picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/01_SHORTS/180501_M_SummerPrimary_SHORTS_L2copy2.svg" alt="the sky is the limit in new heat regulating core temp shorts featuring our coolest technology ever"></picture></a>
+                  <a href="/browse/category.do?cid=1020051" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_shorts');"><picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="./assets/Desktop/01_SHORTS/180501_M_SummerPrimary_SHORTS_L2copy2.svg" alt="the sky is the limit in new heat regulating core temp shorts featuring our coolest technology ever"></picture></a>
                 </div>
                 <div class="cta2 rellax" data-rellax-speed="2" data-rellax-percentage="0.5">
                   <a href="/browse/category.do?cid=1020051" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_shorts');">
@@ -329,11 +148,11 @@ a.linkmap--sm-bottom-blog{top:66%;}
         <!--  background layer -->
         <div class="background sds_relative">
           <a href="/browse/category.do?cid=80117" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_tees');"><picture>
-            <source srcset="/Asset_Archive/BRWeb/content/0015/300/465/assets/Mobile/02_TEES/180501_M_SummerPrimary_Mobile_TEES_img.jpg" media="(max-width: 1023px)">
-            <img alt src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/02_TEES/180501_M_SummerPrimary_TEES_L3img.jpg" >
+            <source srcset="./assets/Mobile/02_TEES/180501_M_SummerPrimary_Mobile_TEES_img.jpg" media="(max-width: 1023px)">
+            <img alt src="./assets/Desktop/02_TEES/180501_M_SummerPrimary_TEES_L3img.jpg" >
           </picture>
           <picture class="mkt_layer sds_full">
-            <source srcset="/Asset_Archive/BRWeb/content/0015/300/465/assets/Mobile/02_TEES/180501_M_SummerPrimary_Mobile_TEES_copy.svg" media="(max-width: 1023px)">
+            <source srcset="./assets/Mobile/02_TEES/180501_M_SummerPrimary_Mobile_TEES_copy.svg" media="(max-width: 1023px)">
             <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" alt="extra soft tees">
           </picture></a>
 
@@ -342,7 +161,7 @@ a.linkmap--sm-bottom-blog{top:66%;}
         <div class="sds_show-at-xl">
           <!-- text -->
           <div class="mkt_layer text4 rellax" data-rellax-speed="2" data-rellax-percentage="0.5">
-            <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/02_TEES/180501_M_SummerPrimary_TEES_L1copy.svg" alt="extra soft tees"></picture>
+            <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="./assets/Desktop/02_TEES/180501_M_SummerPrimary_TEES_L1copy.svg" alt="extra soft tees"></picture>
           </div>
 
           <!-- section 2 - part 1 - text and image layers -->
@@ -352,20 +171,20 @@ a.linkmap--sm-bottom-blog{top:66%;}
               <div class="sds_g-1-3">
                 <div class="img4 rellax" data-rellax-speed="2" data-rellax-percentage="0.5">
                   <a href="/browse/category.do?cid=80117" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_tees');">
-                    <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/02_TEES/180501_M_SummerPrimary_TEES_L2img.jpg" alt="extra soft tees image"></picture></a>
+                    <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="./assets/Desktop/02_TEES/180501_M_SummerPrimary_TEES_L2img.jpg" alt="extra soft tees image"></picture></a>
                 </div>
               </div>
               <!-- text -->
               <div class="sds_g-5-24">
                 <div class="text5 rellax" data-rellax-speed="4" data-rellax-percentage="0.5">
-                  <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/02_TEES/180501_M_SummerPrimary_TEES_L2copy.svg" alt="tip: make yourself comfortable. natural fabrics like cotton and linen are just the ticket"></picture>
+                  <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="./assets/Desktop/02_TEES/180501_M_SummerPrimary_TEES_L2copy.svg" alt="tip: make yourself comfortable. natural fabrics like cotton and linen are just the ticket"></picture>
                 </div>
               </div>
               <!-- image -->
               <div class="sds_g-5-12">
                 <div class="img5 rellax" data-rellax-speed="7" data-rellax-percentage="0.5">
                   <a href="/browse/outfit.do?cid=13846&oid=OUT-320563002" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_softteesoutfit');">
-                    <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/02_TEES/180501_M_SummerPrimary_TEES_L2img2.jpg" alt="extra soft tees shop the look image"></picture>
+                    <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="./assets/Desktop/02_TEES/180501_M_SummerPrimary_TEES_L2img2.jpg" alt="extra soft tees shop the look image"></picture>
                     <span class="sds_btn sds_letter-spacing--2-0 orange sds_btn--full-width">shop the look</span>
                   </a>
                 </div>
@@ -375,7 +194,7 @@ a.linkmap--sm-bottom-blog{top:66%;}
               <div class="sds_g-7-24">
                 <!-- text -->
                 <div class="text6 rellax" data-rellax-speed="2" data-rellax-percentage="0.5">
-                  <a href="/browse/category.do?cid=80117" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_tees');"><picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/02_TEES/180501_M_SummerPrimary_TEES_L2copy2.svg" alt="roll with it in our softer than ever authentic SUPIMA® cotton tee two times as strong as regular cotton"></picture></a>
+                  <a href="/browse/category.do?cid=80117" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_tees');"><picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="./assets/Desktop/02_TEES/180501_M_SummerPrimary_TEES_L2copy2.svg" alt="roll with it in our softer than ever authentic SUPIMA® cotton tee two times as strong as regular cotton"></picture></a>
                 </div>
                 <div class="cta3 above-1 rellax" data-rellax-speed="2" data-rellax-percentage="0.5">
                   <a href="/browse/category.do?cid=80117" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_tees');">
@@ -398,11 +217,11 @@ a.linkmap--sm-bottom-blog{top:66%;}
         <!--  background layer -->
         <div class="background sds_relative">
           <a href="/browse/category.do?cid=32643" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_blazers');"><picture>
-            <source srcset="/Asset_Archive/BRWeb/content/0015/300/465/assets/Mobile/03_BLAZERS/180501_M_SummerPrimary_Mobile_BLAZERS_img.jpg" media="(max-width: 1023px)">
-            <img alt src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/03_BLAZERS/180501_M_SummerPrimary_BLAZERS_L3img.jpg" >
+            <source srcset="./assets/Mobile/03_BLAZERS/180501_M_SummerPrimary_Mobile_BLAZERS_img.jpg" media="(max-width: 1023px)">
+            <img alt src="./assets/Desktop/03_BLAZERS/180501_M_SummerPrimary_BLAZERS_L3img.jpg" >
           </picture>
           <picture class="mkt_layer sds_absolute">
-            <source srcset="/Asset_Archive/BRWeb/content/0015/300/465/assets/Mobile/03_BLAZERS/180501_M_SummerPrimary_Mobile_BLAZERS_copy.svg" media="(max-width: 1023px)">
+            <source srcset="./assets/Mobile/03_BLAZERS/180501_M_SummerPrimary_Mobile_BLAZERS_copy.svg" media="(max-width: 1023px)">
             <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" alt="summer weight blazers">
           </picture></a>
           <a class="linkmap--sm-section3" href="/browse/outfit.do?cid=13846&oid=OUT-320845012" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_blazeroutfit');"><span class="sds_visually-hidden">shop the look</span></a>
@@ -410,7 +229,7 @@ a.linkmap--sm-bottom-blog{top:66%;}
 
         <div class="sds_show-at-xl">
           <div class="text8 rellax above-2" data-rellax-speed="6" data-rellax-percentage="0.5">
-            <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/03_BLAZERS/180501_M_SummerPrimary_BLAZERS_L1copy.svg" alt="summer weight blazers"></picture>
+            <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="./assets/Desktop/03_BLAZERS/180501_M_SummerPrimary_BLAZERS_L1copy.svg" alt="summer weight blazers"></picture>
           </div>
           <!-- section 3 - part 1 - text, cta, video, image layer -->
           <div class="sds_absolute sds_full above-1">
@@ -420,21 +239,21 @@ a.linkmap--sm-bottom-blog{top:66%;}
               <div class="sds_g-3-8">
                 <div class="img8 rellax" data-rellax-speed="4" data-rellax-percentage="0.5">
                   <a href="/browse/category.do?cid=32643" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_blazers');">
-                    <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/03_BLAZERS/180501_M_SummerPrimary_BLAZERS_L2img.jpg" alt="summer weight blazers image"></picture>
+                    <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="./assets/Desktop/03_BLAZERS/180501_M_SummerPrimary_BLAZERS_L2img.jpg" alt="summer weight blazers image"></picture>
                   </a>
                 </div>
               </div>
               <!-- text -->
               <div class="sds_g-1-6">
                 <div class="text7 rellax" data-rellax-speed="2" data-rellax-percentage="0.5">
-                  <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/03_BLAZERS/180501_M_SummerPrimary_BLAZERS_L2copy.svg" alt="tip: no one wants to iron in a hot place. pack it. shake it out. throw it on."></picture>
+                  <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="./assets/Desktop/03_BLAZERS/180501_M_SummerPrimary_BLAZERS_L2copy.svg" alt="tip: no one wants to iron in a hot place. pack it. shake it out. throw it on."></picture>
                 </div>
               </div>
               <!-- image -->
               <div class="sds_g-5-12">
                 <div class="img9 rellax" data-rellax-speed="2" data-rellax-percentage="0.5">
                   <a href="/browse/outfit.do?cid=13846&oid=OUT-320845012" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_blazeroutfit');">
-                    <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/03_BLAZERS/180501_M_SummerPrimary_BLAZERS_L2img2.jpg" alt="summer weight blazers shop the look image"></picture>
+                    <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="./assets/Desktop/03_BLAZERS/180501_M_SummerPrimary_BLAZERS_L2img2.jpg" alt="summer weight blazers shop the look image"></picture>
                     <span class="sds_btn sds_letter-spacing--2-0 orange sds_btn--full-width">shop the look</span>
                   </a>
                 </div>
@@ -443,7 +262,7 @@ a.linkmap--sm-bottom-blog{top:66%;}
               <!-- text -->
               <div class="sds_g-7-24">
                 <div class="text9 rellax above-1" data-rellax-speed="1" data-rellax-percentage="0.5">
-                  <a href="/browse/category.do?cid=32643" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_blazers');"><picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/03_BLAZERS/180501_M_SummerPrimary_BLAZERS_L2copy2.svg" alt="feel the breeze in a seersucker blazer crafted from light breathable fabric made to take the heat"></picture></a>
+                  <a href="/browse/category.do?cid=32643" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_blazers');"><picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="./assets/Desktop/03_BLAZERS/180501_M_SummerPrimary_BLAZERS_L2copy2.svg" alt="feel the breeze in a seersucker blazer crafted from light breathable fabric made to take the heat"></picture></a>
                 </div>
               </div>
               <!-- gutter --><div class="sds_g-1-24"></div>
@@ -451,7 +270,7 @@ a.linkmap--sm-bottom-blog{top:66%;}
               <div class="sds_g-3-8">
                 <div class="img10 rellax mid" data-rellax-speed="6" data-rellax-percentage="0.5">
                   <a href="/browse/category.do?cid=32643" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_blazers');">
-                    <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/03_BLAZERS/180501_M_SummerPrimary_BLAZERS_L2img3.jpg" alt="summer weight blazers"></picture>
+                    <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="./assets/Desktop/03_BLAZERS/180501_M_SummerPrimary_BLAZERS_L2img3.jpg" alt="summer weight blazers"></picture>
                   </a>
                 </div>
               </div>
@@ -473,11 +292,11 @@ a.linkmap--sm-bottom-blog{top:66%;}
         <!--  background layer -->
         <div class="background sds_relative">
           <a href="/browse/category.do?cid=44873" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_casualshirts');"><picture>
-            <source srcset="/Asset_Archive/BRWeb/content/0015/300/465/assets/Mobile/04_SHIRTS/180501_M_SummerPrimary_Mobile_SHIRTS_img.jpg" media="(max-width: 1023px)">
-            <img alt src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/04_SHIRTS/180501_M_SummerPrimary_SHIRTS_L3img.jpg" >
+            <source srcset="./assets/Mobile/04_SHIRTS/180501_M_SummerPrimary_Mobile_SHIRTS_img.jpg" media="(max-width: 1023px)">
+            <img alt src="./assets/Desktop/04_SHIRTS/180501_M_SummerPrimary_SHIRTS_L3img.jpg" >
           </picture>
           <picture class="mkt_layer sds_full">
-            <source srcset="/Asset_Archive/BRWeb/content/0015/300/465/assets/Mobile/04_SHIRTS/180501_M_SummerPrimary_Mobile_SHIRTS_copy.svg" media="(max-width: 1023px)">
+            <source srcset="./assets/Mobile/04_SHIRTS/180501_M_SummerPrimary_Mobile_SHIRTS_copy.svg" media="(max-width: 1023px)">
             <img alt="linen shirts" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" >
           </picture></a>
 
@@ -492,7 +311,7 @@ a.linkmap--sm-bottom-blog{top:66%;}
               <!-- text -->
               <div class="sds_g-11-24">
                 <div class="text10 rellax" data-rellax-speed="4" data-rellax-percentage="0.5">
-                  <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/04_SHIRTS/180501_M_SummerPrimary_SHIRTS_L1copy.svg" alt="linen shirts"></picture>
+                  <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="./assets/Desktop/04_SHIRTS/180501_M_SummerPrimary_SHIRTS_L1copy.svg" alt="linen shirts"></picture>
                 </div>
               </div>
               <!-- gutter --><div class="sds_g-5-24"></div>
@@ -500,24 +319,24 @@ a.linkmap--sm-bottom-blog{top:66%;}
               <div class="sds_g-1-2">
                 <div class="img11 rellax" data-rellax-speed="2" data-rellax-percentage="0.5">
                   <a href="/browse/outfit.do?cid=13846&oid=OUT-266619002" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_linenshirtoutfit');">
-                    <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/04_SHIRTS/180501_M_SummerPrimary_SHIRTS_L2img.jpg" alt="linen shirts image"></picture>
+                    <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="./assets/Desktop/04_SHIRTS/180501_M_SummerPrimary_SHIRTS_L2img.jpg" alt="linen shirts image"></picture>
                     <span class="sds_btn sds_letter-spacing--2-0 orange sds_btn--full-width">shop the look</span>
                   </a>
                 </div>
                 <div class="text12 rellax" data-rellax-speed="4" data-rellax-percentage="0.5">
-                  <a href="/browse/category.do?cid=44873" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_casualshirts');"><picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/04_SHIRTS/180501_M_SummerPrimary_SHIRTS_L2copy2.svg" alt="go with the flow in a linen shirt. it's breezy and lightweight so you can float through the day"></picture></a>
+                  <a href="/browse/category.do?cid=44873" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_casualshirts');"><picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="./assets/Desktop/04_SHIRTS/180501_M_SummerPrimary_SHIRTS_L2copy2.svg" alt="go with the flow in a linen shirt. it's breezy and lightweight so you can float through the day"></picture></a>
                 </div>
               </div>
               <!-- gutter --><div class="sds_g-1-24"></div>
               <!-- text -->
               <div class="sds_g-11-24">
                 <div class="text11 rellax" data-rellax-speed="2" data-rellax-percentage="0.5">
-                  <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/04_SHIRTS/180501_M_SummerPrimary_SHIRTS_L2copy.svg" alt="tip: pack comfortable pieces that can be worn on your daily adventures then easily dressed up at night"></picture>
+                  <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="./assets/Desktop/04_SHIRTS/180501_M_SummerPrimary_SHIRTS_L2copy.svg" alt="tip: pack comfortable pieces that can be worn on your daily adventures then easily dressed up at night"></picture>
                 </div>
 
                 <div class="img12 rellax" data-rellax-speed="2" data-rellax-percentage="0.5">
                   <a href="/browse/category.do?cid=44873" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_casualshirts');">
-                    <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/04_SHIRTS/180501_M_SummerPrimary_SHIRTS_L2img2.jpg" alt="linen shirts image"></picture>
+                    <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="./assets/Desktop/04_SHIRTS/180501_M_SummerPrimary_SHIRTS_L2img2.jpg" alt="linen shirts image"></picture>
                   </a>
                 </div>          
               </div>
@@ -539,11 +358,11 @@ a.linkmap--sm-bottom-blog{top:66%;}
         <!--  background layer -->
         <div class="background sds_relative">
           <a href="/browse/category.do?cid=1012499" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_accessories');"><picture>
-            <source srcset="/Asset_Archive/BRWeb/content/0015/300/465/assets/Mobile/05_ACCESSORIES/180501_M_SummerPrimary_Mobile_ACC_img_v2.jpg" media="(max-width: 1023px)">
-            <img alt src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/05_ACCESSORIES/180501_M_SummerPrimary_ACC_L3img.jpg" >
+            <source srcset="./assets/Mobile/05_ACCESSORIES/180501_M_SummerPrimary_Mobile_ACC_img_v2.jpg" media="(max-width: 1023px)">
+            <img alt src="./assets/Desktop/05_ACCESSORIES/180501_M_SummerPrimary_ACC_L3img.jpg" >
           </picture>
           <picture class="mkt_layer sds_full">
-            <source srcset="/Asset_Archive/BRWeb/content/0015/300/465/assets/Mobile/05_ACCESSORIES/180501_M_SummerPrimary_Mobile_ACC_copy_v2.svg" media="(max-width: 1023px)">
+            <source srcset="./assets/Mobile/05_ACCESSORIES/180501_M_SummerPrimary_Mobile_ACC_copy_v2.svg" media="(max-width: 1023px)">
             <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" alt="on the go extras">
           </picture></a>
         </div>
@@ -551,7 +370,7 @@ a.linkmap--sm-bottom-blog{top:66%;}
           <!-- section 5 - part 1 - text, image layer -->
           <!-- text -->
           <div class="text13 rellax above-2" data-rellax-speed="5" data-rellax-percentage="0.5">
-            <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/05_ACCESSORIES/180501_M_SummerPrimary_ACC_L1copy.svg" alt="on the go extras"></picture>
+            <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="./assets/Desktop/05_ACCESSORIES/180501_M_SummerPrimary_ACC_L1copy.svg" alt="on the go extras"></picture>
           </div>
 
           <div class="sds_absolute sds_full above-1">
@@ -560,7 +379,7 @@ a.linkmap--sm-bottom-blog{top:66%;}
               <div class="sds_g-1-3">
                 <div class="img14 rellax" data-rellax-speed="3" data-rellax-percentage="0.5">
                   <a href="/browse/category.do?cid=1012499" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_accessories');">
-                    <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/05_ACCESSORIES/180501_M_SummerPrimary_ACC_L2img.jpg" alt="on the go extras image 1"></picture>
+                    <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="./assets/Desktop/05_ACCESSORIES/180501_M_SummerPrimary_ACC_L2img.jpg" alt="on the go extras image 1"></picture>
                   </a>
                 </div>
               </div>
@@ -568,14 +387,14 @@ a.linkmap--sm-bottom-blog{top:66%;}
               <!-- text -->
               <div class="sds_g-5-24">
                  <div class="text14 rellax" data-rellax-speed="4" data-rellax-percentage="0.5">
-                    <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/05_ACCESSORIES/180501_M_SummerPrimary_ACC_L2copy.svg" alt="tip: go places. get more mileage out of each look with versatile accessories that are easy to mix and match"></picture>
+                    <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="./assets/Desktop/05_ACCESSORIES/180501_M_SummerPrimary_ACC_L2copy.svg" alt="tip: go places. get more mileage out of each look with versatile accessories that are easy to mix and match"></picture>
                   </div>
               </div>
               <!-- image -->
               <div class="sds_g-5-12">
                 <div class="img15 rellax" data-rellax-speed="3" data-rellax-percentage="0.5">
                   <a href="/browse/category.do?cid=1012499" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_accessories');">
-                    <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/05_ACCESSORIES/180501_M_SummerPrimary_ACC_L2img2.jpg" alt="on the go extras image 2"></picture>
+                    <picture><source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)"><img class="sds_full" src="./assets/Desktop/05_ACCESSORIES/180501_M_SummerPrimary_ACC_L2img2.jpg" alt="on the go extras image 2"></picture>
                   </a>
                 </div>
               </div>
@@ -586,7 +405,7 @@ a.linkmap--sm-bottom-blog{top:66%;}
                 <div class="text15 rellax" data-rellax-speed="4" data-rellax-percentage="0.5">
                   <a href="/browse/category.do?cid=1012499" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_accessories');"><picture>
                     <source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)">
-                    <img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/05_ACCESSORIES/180501_M_SummerPrimary_ACC_L2copy2.svg" alt="ground each look with shoes and totes full of function and personality">
+                    <img class="sds_full" src="./assets/Desktop/05_ACCESSORIES/180501_M_SummerPrimary_ACC_L2copy2.svg" alt="ground each look with shoes and totes full of function and personality">
                   </picture></a>
                 </div>
                 <!-- cta -->
@@ -602,7 +421,7 @@ a.linkmap--sm-bottom-blog{top:66%;}
                   <a href="/browse/category.do?cid=1012499" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_accessories');">
                     <picture>
                       <source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)">
-                      <img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/05_ACCESSORIES/180501_M_SummerPrimary_ACC_L2img3.jpg" alt="on the go extras image 3">
+                      <img class="sds_full" src="./assets/Desktop/05_ACCESSORIES/180501_M_SummerPrimary_ACC_L2img3.jpg" alt="on the go extras image 3">
                     </picture>
                   </a>
                 </div>
@@ -619,15 +438,15 @@ a.linkmap--sm-bottom-blog{top:66%;}
           <div class="summer--video sds_relative">
             <div class="sds_relative">
                 <p class="sds_font--primary sds_font-size--42 sds_color--bk sds_tx_right"><a class="videoclosebutton">x</a></p>
-                <iframe class="videoplayer" data-tid="m_thepackinglist_video"></iframe>
+                <iframe allow="autoplay" class="videoplayer" data-tid="m_thepackinglist_video"></iframe>
             </div>
             <div class="videoposter">
               <picture>
-                <source srcset="/Asset_Archive/BRWeb/content/0015/300/465/assets/Mobile/06_VIDEO/06_Video_IMG_SM.jpg" media="(max-width: 1023px)">
+                <source srcset="./assets/Mobile/06_VIDEO/06_Video_IMG_SM.jpg" media="(max-width: 1023px)">
                 <img alt src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" >
               </picture>
               <picture class="mkt_layer sds_full">
-                <source srcset="/Asset_Archive/BRWeb/content/0015/300/465/assets/Mobile/06_VIDEO/06_Video_Text_SM.svg" media="(max-width: 1023px)">
+                <source srcset="./assets/Mobile/06_VIDEO/06_Video_Text_SM.svg" media="(max-width: 1023px)">
                 <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" alt="the packing list. watch the video">
               </picture>
             </div>
@@ -639,11 +458,11 @@ a.linkmap--sm-bottom-blog{top:66%;}
         <div class="sds_relative front">
           <!-- background image -->
           <picture>
-            <source srcset="/Asset_Archive/BRWeb/content/0015/300/465/assets/Mobile/07_BOTTOM/180501_M_SummerPrimary_Mobile_BOTTOM_img.jpg" media="(max-width: 1023px)">
-            <img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/06_BOTTOM/180501_M_SummerPrimary_BOTTOM_BGimg.jpg" alt>
+            <source srcset="./assets/Mobile/07_BOTTOM/180501_M_SummerPrimary_Mobile_BOTTOM_img.jpg" media="(max-width: 1023px)">
+            <img class="sds_full" src="./assets/Desktop/06_BOTTOM/180501_M_SummerPrimary_BOTTOM_BGimg.jpg" alt>
           </picture>
           <picture class="mkt_layer sds_full">
-            <source srcset="/Asset_Archive/BRWeb/content/0015/300/465/assets/Mobile/07_BOTTOM/180501_M_SummerPrimary_Mobile_BOTTOM_copy.svg" media="(max-width: 1023px)">
+            <source srcset="./assets/Mobile/07_BOTTOM/180501_M_SummerPrimary_Mobile_BOTTOM_copy.svg" media="(max-width: 1023px)">
             <img alt="see more" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==">
           </picture>
           <div class="sds_show-at-xl">
@@ -655,7 +474,7 @@ a.linkmap--sm-bottom-blog{top:66%;}
                   <a href="/browse/category.do?cid=13846" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_newarrivals');">
                     <picture>
                       <source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)">
-                      <img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/06_BOTTOM/180501_M_SummerPrimary_BOTTOM_square1.jpg" alt="shop new arrivals image">
+                      <img class="sds_full" src="./assets/Desktop/06_BOTTOM/180501_M_SummerPrimary_BOTTOM_square1.jpg" alt="shop new arrivals image">
                     </picture>
                     <span class="sds_btn sds_letter-spacing--2-0 black sds_btn--full-width">shop new arrivals</span>
                   </a>
@@ -666,7 +485,7 @@ a.linkmap--sm-bottom-blog{top:66%;}
                   <a href="/browse/info.do?cid=1107640" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_wthepackinglist');">
                     <picture>
                       <source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)">
-                      <img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/06_BOTTOM/180501_M_SummerPrimary_BOTTOM_square2.jpg" alt="womens packing list image">
+                      <img class="sds_full" src="./assets/Desktop/06_BOTTOM/180501_M_SummerPrimary_BOTTOM_square2.jpg" alt="womens packing list image">
                     </picture>
                     <span class="sds_btn sds_letter-spacing--2-0 black sds_btn--full-width">shop the women's packing list</span>
                   </a>
@@ -677,7 +496,7 @@ a.linkmap--sm-bottom-blog{top:66%;}
                   <a href="http://bananarepublic.us/" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_thepackinglist_blog');">
                     <picture>
                       <source srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" media="(max-width: 1023px)">
-                      <img class="sds_full" src="/Asset_Archive/BRWeb/content/0015/300/465/assets/Desktop/06_BOTTOM/180501_M_SummerPrimary_BOTTOM_square3.jpg" alt="BR on the road blog image">
+                      <img class="sds_full" src="./assets/Desktop/06_BOTTOM/180501_M_SummerPrimary_BOTTOM_square3.jpg" alt="BR on the road blog image">
                     </picture>
                     <span class="sds_btn sds_letter-spacing--2-0 black sds_btn--full-width">#brontheroad: visit our blog</span>
                   </a>
@@ -698,192 +517,9 @@ a.linkmap--sm-bottom-blog{top:66%;}
       <div class="summer--video sds_absolute-centered">
           <div class="sds_relative">
               <p class="sds_font--primary sds_font-size--42 sds_color--wh sds_tx_right"><a class="videoclosebutton">x</a></p>
-              <iframe class="videoplayer" data-tid="m_thepackinglist_video"></iframe>
+              <iframe allow="autoplay" class="videoplayer" data-tid="m_thepackinglist_video"></iframe>
           </div>
       </div>
     </div>
   </div>
 </div>
-
-<script type="text/javascript">
-  var wcdVideoHandler = function(iframe, vimeoid, embed) {
-      this.iframe = jQuery(iframe);
-      this.vidContainer = jQuery(iframe).parent().parent();
-      this.closeButton = this.vidContainer.find('.videoclosebutton');
-      this.poster = jQuery(iframe).parent().parent().children('.videoposter');
-      this.player = null;
-      this.eventName = jQuery(iframe).data('tid');
-      this.src = 'https://player.vimeo.com/video/' + vimeoid;
-      this.playing = false;
-      this.openedOnce = false;
-
-      if(iframe.indexOf('popup') > -1){this.popup = this.vidContainer.parent()}
-
-      var that = this;
-
-      this.play = function() {
-          that.player.play();
-          that.poster.hide()
-      }, this.pause = function() {
-          that.player.pause()
-      }, this.openvideo = function() {
-        if(typeof(that.popup) != "undefined"){that.popup.show()};
-          if (!that.openedOnce) {
-              that.iframe.attr('src', this.src);
-              that.player = new Vimeo.Player(that.iframe);
-              that.eventhandlers();
-              setTimeout(function() {
-                  that.play();
-                  that.openedOnce = true;
-              }, 500)
-          } else that.play()
-
-          that.closeButton.show();
-      }, this.stop = function() {
-        if(typeof(that.popup) != "undefined"){that.popup.hide()};
-          that.pause();
-          that.poster.show();
-          that.closeButton.hide();
-          that.player.unload()
-      }, this.eventhandlers = function() {
-          jQuery(document).keyup(function(e) {
-              if (e.keyCode == 27) {
-                  that.stop()
-              }
-          });
-          that.player.on("play", function() {
-              sendToOmni(wcdLib.pageDataLayer.page_name, that.eventName);
-              that.playing = true;
-          });
-          that.player.on("pause", function() {
-              that.playing = false;
-          });
-          that.player.on("ended", function() {
-              that.stop();
-              console.log('ended')
-          });
-          jQuery('body').click(function(e) {
-              if (that.vidContainer.has(e.target).length === 0 && !jQuery(e.target.parentElement).hasClass('openvideo')) {
-                  that.stop()
-              }
-          });
-          that.vidContainer.click(function(e) {
-              if (jQuery(e.target).hasClass('videoclosebutton')) {
-                  that.stop()
-              }
-          })
-      };
-      that.poster.click(function() {
-          that.openvideo();
-      })
-  };
-</script>
-<script type="text/javascript">
-  var summer_video_popup;
-  var rellax;
-  jQuery(document).ready(function() {
-  /* construct video embeds */
-    summer_video_popup = new wcdVideoHandler(".summer--video-popup .summer--video .videoplayer", "266386093");
-      var summer_video_embed_01 = new wcdVideoHandler(".img2 .summer--video .videoplayer", "266387055");
-      var summer_video_embed_02 = new wcdVideoHandler(".summer--video-mobile .summer--video .videoplayer", "266386093");
-      wcd_summer_nav.init();
-      /* construct parallax for all elements with rellax class */
-      if(!/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.outerWidth >= 1024) {
-        rellax = new Rellax('.rellax', {center: true});
-      }
-  });
-
-  /* sticky nav */
-  var wcd_summer_nav = {
-    scrollInterval : null,
-    resizeInterval : null,
-
-    resizeFunction : function (){
-
-      wcd_summer_nav.hdrHeight = Math.floor(jQuery(".lp--top-content").outerHeight() + jQuery(".lp--top-content").offset().top);
-      wcd_summer_nav.section1Limit = Math.floor(jQuery("#section1").offset().top);
-      wcd_summer_nav.section2Limit = Math.floor(jQuery("#section2").offset().top - window.innerHeight/3);
-      wcd_summer_nav.section3Limit = Math.floor(jQuery("#section3").offset().top - window.innerHeight/3);
-      wcd_summer_nav.section4Limit = Math.floor(jQuery("#section4").offset().top - window.innerHeight/3);
-      wcd_summer_nav.section5Limit = Math.floor(jQuery("#section5").offset().top - window.innerHeight/3);
-
-      wcd_summer_nav.bottomLimit = Math.floor(jQuery("#bottom-nav-section").offset().top - jQuery("#bottom-nav-section").outerHeight());
-
-      if(typeof(rellax) != "undefined")rellax.refresh();
-
-    },
-
-    scrollFunction : function(navBar, navBarItems, $view, activeIdx){
-      if($view.scrollTop() > wcd_summer_nav.bottomLimit){
-        navBar.fadeOut();
-      }else if( $view.scrollTop() > wcd_summer_nav.hdrHeight) {
-        navBar.fadeIn()
-          navBar.addClass("navScrolled");
-
-          navBarItems.removeClass("active-section");
-
-          if($view.scrollTop() >= wcd_summer_nav.section5Limit){
-            activeIdx = 4;
-          }else if($view.scrollTop() >= wcd_summer_nav.section4Limit){
-            activeIdx = 3;
-          }else if($view.scrollTop() >= wcd_summer_nav.section3Limit){
-            activeIdx = 2;
-          }else if($view.scrollTop() >= wcd_summer_nav.section2Limit){
-            activeIdx = 1;
-          }else if($view.scrollTop() >= wcd_summer_nav.section1Limit){
-            activeIdx = 0;
-          }
-
-          navBarItems[activeIdx].className = "active-section";
-      } else {
-          navBar.removeClass("navScrolled");
-          navBarItems.removeClass("active-section");
-      }
-    },
-
-    init : function(){
-      var windowScrolling = false,
-        windowResize = false,
-        navBar = jQuery(".sticky-navmenu"),
-        navBarItems = jQuery(".sticky-navmenu ul li"),
-        $view = jQuery(window),
-        activeIdx = 0;
-
-      wcd_summer_nav.resizeFunction();
-      wcd_summer_nav.scrollFunction(navBar, navBarItems, $view, activeIdx);
-
-      $view.resize(function() { windowResize = true });
-      $view.scroll(function() { windowScrolling = true });
-
-      wcd_summer_nav.resizeInterval = setInterval ( function() {
-        if(windowResize || windowScrolling){
-          windowResize = false;
-
-          wcd_summer_nav.resizeFunction();
-
-        }
-      }, 200);
-
-      wcd_summer_nav.scrollInterval = setInterval ( function() { 
-        if(windowScrolling){
-          windowScrolling = false;
-
-          wcd_summer_nav.scrollFunction(navBar, navBarItems, $view, activeIdx);
-
-        }
-      }, 50);
-    },
-  }
-
-  /* scroll To Section */
-  function scrollToSection(event) {
-      event.preventDefault();
-      var $section = jQuery("#"+jQuery(this).attr('data-scroll'));
-      var offsetTop = Math.floor($section.offset().top);
-      jQuery('html, body').animate({
-        scrollTop: offsetTop
-      }, 1000);
-   }
-   jQuery('[data-scroll]').on('click', scrollToSection);
-
-</script>

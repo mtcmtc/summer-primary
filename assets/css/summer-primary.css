@@ -1,0 +1,182 @@
+
+    .sticky-navmenu{
+        position: absolute;
+        width:25%;
+        right: 0;
+        z-index: 4;
+
+    }
+    .sticky-navmenu ul{
+    }
+    .sticky-navmenu ul li {
+      text-transform: uppercase;
+        letter-spacing: .1em;
+        font-family: futura-pt,Futura,"Hiragino Kaku Gothic Pro",sans-serif;
+        color: #000;
+        font-weight: 700;
+        letter-spacing: 4px;
+        font-size: .85rem;
+        margin-bottom: 1.3em;
+    }
+    .sticky-navmenu ul li a:hover, .sticky-navmenu ul li.active-section{
+      color: #b95540;
+    }
+    .navScrolled {
+      position: fixed;
+      top: 100px;
+    }
+
+
+/*override top nav*/
+#topNav, #footer, #zoomLayer, #dragLayer, #previewBar, .brand-bar-with-contents .marketing-content{position: relative;}
+
+#topNav, #footer{
+  z-index:10;
+  background-color:#fff !important;
+}
+#topNavCommon_region1{
+    background-color: #fff;
+    padding-top: 5em;
+    margin-top: 0;
+}
+
+#previewBar, .brand-bar-with-contents .marketing-content{
+  z-index: 1;
+}
+</style>
+
+<style type="text/css">
+
+.summer--video-popup{display:none;position:fixed;width:100%;height:100%;top: 0;background-color: rgba(0,0,0,.5);z-index: 10;}
+.summer--video-popup .summer--video{width: 70%;max-width: 1200px;}
+.summer--video-popup .summer--video a.videoclosebutton{display:block;left:none;right:0;}
+
+.summer--video .sds_relative {
+    padding-bottom: 56.25%;
+    max-width: 100%;
+}
+.summer--video a.videoclosebutton {
+    display:none;
+    position: absolute;
+    left: 0;
+    top: -54px;
+    cursor: pointer;
+}
+.summer--video iframe.videoplayer,
+.summer--video .videoposter {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* z-index utilities */
+  .summerprimary .front{z-index:3;}
+  .summerprimary .above-2{z-index:2;}
+  .summerprimary .above-1{z-index:1;}
+  .summerprimary .mid{z-index:0;}
+  .summerprimary .behind{z-index:-1;}
+  .summerprimary .back{z-index:-2;}
+
+/* page-wide styles */
+  .summerprimary * { font-family: futura-pt,Futura,"Hiragino Kaku Gothic Pro",sans-serif;  }
+  .summerprimary a[onclick],.summerprimary a[data-scroll]{cursor: pointer;}
+  .summerprimary {max-width:100%;}
+  .summerprimary .sds_btn.orange{background-color:#b13f26;}
+  .summerprimary .sds_btn.black{background-color:#000;}
+  .summerprimary .lp--top-content{max-width: 100%;position:relative; z-index:0;}
+  .summerprimary .lp--main-content{margin-left:auto;margin-right:auto; position:relative;background-color:#fff; overflow:hidden;}
+  .summerprimary .lp--main-content .mkt_content-wrapper{max-width:1440px;}
+  .summerprimary [id^="section"] {position:relative; margin-bottom:0;}
+  .summerprimary [id^="section"] .background{margin-top: 0%;}
+
+/* spotlight styles */
+  .summerprimary .lp--top-content .cta1{top:-10px;left:41.67%;max-width:264px;width:20.83%;margin-top:52%;}
+  .summerprimary .lp--top-content .spotlight-text{top:-10px;}
+
+  .scroll-to-down{position: relative;background-color: #fff;}
+
+/* section 1 styles */
+  .summerprimary #section1 .sds_absolute{top:0%;}
+  .summerprimary #section1 .img1{margin-top:30%;}
+  .summerprimary #section1 .img2{margin-top:-5%;}
+  .summerprimary #section1 .text1{width:37.5%; left:41.67%; margin-top:2%; z-index: 3;}
+  .summerprimary #section1 .text2{margin-top: 75%;margin-left: -10%;margin-right: 10%;}
+  .summerprimary #section1 .text3{margin-top:50%;}
+  .summerprimary #section1 .cta2{width:45%;margin-top:25%;}
+
+/* section 2 styles */
+  .summerprimary #section2 .sds_absolute{top:0%;}
+  .summerprimary #section2 .img4{margin-top:26%;}
+  .summerprimary #section2 .img5{margin-top:33%;}
+  .summerprimary #section2 .img6{margin-top:0;}
+  .summerprimary #section2 .img7{margin-top:17%;}
+  .summerprimary #section2 .text4{width:45.83%;margin-top:5%; left:25%; z-index: 3;}
+  .summerprimary #section2 .text5{margin-top: 200%;margin-right: -20%;margin-left: 20%; z-index: 0;}
+  .summerprimary #section2 .text6{margin-top:80%; z-index: 0;}
+  .summerprimary #section2 .cta3{width:40%;margin-top:25%;margin-left:32%;}
+  
+
+/* section 3 styles */
+  .summerprimary #section3 .sds_absolute{top:0%;}
+  .summerprimary #section3 .img8{position:relative; margin-top:16%;}
+  .summerprimary #section3 .img9{position:relative; margin-top:43%;}
+  .summerprimary #section3 .img10{position:relative; margin-top:-15%;}
+  .summerprimary #section3 .text7{position:relative; margin-top:220%; margin-left:-25%; z-index: 0;}
+  .summerprimary #section3 .text8{position:absolute;top:0;width:33.33%;margin-top:6%;left:29.17%;}
+  .summerprimary #section3 .text9{position:relative; margin-top:30%;}
+  .summerprimary #section3 .cta4{margin-top: 89%;left:45%;}
+
+/* section 4 styles */
+  .summerprimary #section4 .sds_absolute{top:0%;}
+  .summerprimary #section4 .img11{position:relative;}
+  .summerprimary #section4 .img12{position:relative; margin-top:-12%;}
+  .summerprimary #section4 .img13{position:relative; margin-top:0%;}
+  .summerprimary #section4 .text10{margin-top:18%; z-index: 0;}
+  .summerprimary #section4 .text11{margin-top:15%; z-index: 1;}
+  .summerprimary #section4 .text12{margin-top:50%; z-index: 0;}
+  .summerprimary #section4 .cta5{margin-top: 102%;left:16.67%;}
+
+/* section 5 styles */
+  .summerprimary #section5 .sds_absolute{top:0%;}
+  .summerprimary #section5 .img14{position:relative; margin-top:30%;}
+  .summerprimary #section5 .img15{position:relative; margin-top:19%;}
+  .summerprimary #section5 .img16{margin-top:0%;}
+  .summerprimary #section5 .text13{position:absolute;top:0;left:0;width:37.5%;margin-top:8%;left:29.16%; z-index: 3;}
+  .summerprimary #section5 .text14{margin-top:140%; z-index: 1;}
+  .summerprimary #section5 .text15{margin-top:45%; z-index: 0;}
+  .summerprimary #section5 .cta6{width:65%;margin-top:10%;}
+/* bttom nav styles */
+  #bottom-nav-section{position: relative;}
+  #bottom-nav-section .sds_btn{font-size:.75rem; white-space: normal;}
+
+/* image mapping */
+a[class*="linkmap"]{position:absolute;top:0;left:0;}
+a[class*="linkmap--sm"]{width:50%;height:100%;}
+a[class*="linkmap--sm-bottom"]{width: 57%;height: 30%;top: 4%;left: 21%;}
+a.linkmap--sm-bottom-msummer{top:35%;}
+a.linkmap--sm-bottom-blog{top:66%;}
+
+@media screen and (min-width:1024px){
+  .summerprimary .lp--top-content{height:550px;height:56vw;}
+  .summerprimary .lp--top-content .spotlight-text, .summerprimary .lp--top-content .spotlight-img{width:110%;}
+
+  .summerprimary [id^="section"] {margin-bottom:8%;}
+  .summerprimary #section5{ padding-bottom:35%; }
+  a[class*="linkmap--lg"]{width:33%;height:39%;}
+  a[class*="linkmap--sm"]{display:none;}
+
+  a.linkmap--lg-section1{top:66%;}
+  a.linkmap--lg-section2-1{width:38%;height:43%;top:71%;}
+  a.linkmap--lg-section2-2{width:36%;height:47%;top:53%;left:55%;}
+  a.linkmap--lg-section4{width: 46%;height: 51%;top: 77%;left: 29%;}
+}
+
+@media screen and (min-width:1280px){
+  .summerprimary .lp--top-content .spotlight-text, .summerprimary .lp--top-content .spotlight-img{width:100%;}
+  .summerprimary .lp--top-content .cta1{margin-top:47%;}
+}
