@@ -77,15 +77,16 @@
   var summer_video_popup;
   var rellax;
   jQuery(document).ready(function() {
-  /* construct video embeds */
+    jQuery('[data-scroll]').on('click', scrollToSection);
+    /* construct video embeds */
     summer_video_popup = new wcdVideoHandler(".summer--video-popup .summer--video .videoplayer", "266386093");
-      var summer_video_embed_01 = new wcdVideoHandler(".img2 .summer--video .videoplayer", "266387055");
-      var summer_video_embed_02 = new wcdVideoHandler(".summer--video-mobile .summer--video .videoplayer", "266386093");
-      wcd_summer_nav.init();
-      /* construct parallax for all elements with rellax class */
-      if(!/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.outerWidth >= 1024) {
-        rellax = new Rellax('.rellax', {center: true});
-      }
+    var summer_video_embed_01 = new wcdVideoHandler(".img2 .summer--video .videoplayer", "266387055");
+    var summer_video_embed_02 = new wcdVideoHandler(".summer--video-mobile .summer--video .videoplayer", "266386093");
+    wcd_summer_nav.init();
+    /* construct parallax for all elements with rellax class */
+    if(!/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.outerWidth >= 1024) {
+      rellax = new Rellax('.rellax', {center: true});
+    }
   });
 
   /* sticky nav */
@@ -179,5 +180,4 @@
         scrollTop: offsetTop
       }, 1000);
    }
-   jQuery('[data-scroll]').on('click', scrollToSection);
 
